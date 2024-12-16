@@ -3,7 +3,6 @@ import { messagesService, MessagesService } from './messages.service';
 
 @Global()
 @Module({
-  //providers: [MessagesService],
   providers: [
     {
       provide: MessagesService,
