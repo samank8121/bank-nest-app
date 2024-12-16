@@ -1,7 +1,6 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { TransactionType } from '@prisma/client';
 import { PrismaService } from 'src/prisma/prisma.service';
-//import { CreateAccountDto } from './dto/create-account.dto';
 import { MessagesService } from 'src/messages/messages.service';
 import { CreateAccountDto } from './validation/account';
 
@@ -41,10 +40,9 @@ export class AccountService {
         },
       });
       return account;
-    } catch(error) {      
+    } catch {      
       throw new HttpException(
-        error,
-        //this.messagesService.getMessage('errors', 'general'),
+        this.messagesService.getMessage('errors', 'general'),
         HttpStatus.INTERNAL_SERVER_ERROR
       );
     }

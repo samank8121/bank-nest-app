@@ -16,24 +16,6 @@ export const messages = {
 export type MessageKey = keyof typeof messages;
 export type NestedMessageKey<T extends MessageKey> = keyof (typeof messages)[T];
 
-// @Injectable()
-// export class MessagesService {
-//   getMessage<T extends MessageKey>(
-//     category: T,
-//     key: NestedMessageKey<T>,
-//     params?: Record<string, string | number>
-//   ): string {
-//     let message = messages[category][key] as string;
-
-//     if (params) {
-//       Object.entries(params).forEach(([key, value]) => {
-//         message = message.replace(`{${key}}`, String(value));
-//       });
-//     }
-
-//     return message;
-//   }
-// }
 @Injectable()
 export class MessagesService {
   private static instance: MessagesService;

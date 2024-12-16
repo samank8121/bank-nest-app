@@ -1,13 +1,9 @@
 import { Body, Controller, Get, Param, Post, UsePipes } from '@nestjs/common';
 import { AccountService } from './account.service';
-import { CreateAccountDto } from './dto/create-account.dto';
 import { ZodValidationPipe } from 'src/pipes/zod-validation.pipe';
-import { createAccountSchema } from './validation/account';
+import { createAccountSchema, CreateAccountDto } from './validation/account';
 import { messagesService } from 'src/messages/messages.service';
 
-// const createAccountPipe = new ZodValidationPipe(() =>
-//   createAccountSchema(new MessagesService().getMessage)
-// );
 export const createAccountPipe = new ZodValidationPipe(() =>
   createAccountSchema(messagesService.getMessage.bind(messagesService))
 );
