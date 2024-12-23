@@ -12,6 +12,8 @@ model Account {
   iban          String        @unique
   balance       Float         @default(0)
   transactions  Transaction[]
+  userId Int
+  user   User @relation(fields: [userId], references: [id])
 
   @@map("account")
 }
@@ -31,5 +33,17 @@ model Transaction {
   toAccountIban String? @map("to_account_iban")
 
   @@map("transaction")
+}
+model User {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  email String @unique
+  hash  String
+
+  accounts Account[]
+
+  @@map("users")
 }
 

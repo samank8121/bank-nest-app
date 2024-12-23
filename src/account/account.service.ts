@@ -6,7 +6,7 @@ import { CreateAccountDto } from './validation/account';
 
 @Injectable()
 export class AccountService {
- constructor(
+  constructor(
     private prisma: PrismaService,
     private readonly messagesService: MessagesService
   ) {}
@@ -24,13 +24,18 @@ export class AccountService {
     });
   }
 
-  async createAccount(dto: CreateAccountDto) {
+  async createAccount(userId: string, dto: CreateAccountDto) {
     const { iban, balance } = dto;
     try {
       const account = await this.prisma.account.create({
         data: {
           iban,
           balance,
+          user: {
+            connect: {
+              id: Number.parseInt(userId),
+            },
+          },
           transactions: {
             create: {
               amount: balance,
@@ -40,7 +45,7 @@ export class AccountService {
         },
       });
       return account;
-    } catch {      
+    } catch {
       throw new HttpException(
         this.messagesService.getMessage('errors', 'general'),
         HttpStatus.INTERNAL_SERVER_ERROR
