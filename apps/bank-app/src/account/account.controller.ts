@@ -1,10 +1,10 @@
 import { Body, Controller, Get, Param, Post, UseGuards } from '@nestjs/common';
 import { AccountService } from './account.service';
-import { ZodValidationPipe } from 'src/pipes/zod-validation.pipe';
+import { ZodValidationPipe } from 'apps/bank-app/src/pipes/zod-validation.pipe';
 import { createAccountSchema, CreateAccountDto } from './validation/account';
-import { messagesService } from 'src/common/messages/messages.service';
-import { JwtGuard } from 'src/auth/guard/jwt.guard';
-import { User } from 'src/auth/decorator';
+import { messagesService } from 'apps/bank-app/src/common-o/messages/messages.service';
+import { JwtGuard } from 'apps/bank-app/src/auth/guard/jwt.guard';
+import { User } from 'apps/bank-app/src/auth/decorator';
 
 export const createAccountPipe = new ZodValidationPipe(() =>
   createAccountSchema(messagesService.getMessage.bind(messagesService))
