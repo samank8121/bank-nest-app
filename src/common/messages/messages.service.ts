@@ -7,6 +7,9 @@ export const messages = {
     deposit: 'deposit.',
     withdraw: 'withdraw',
     invalidIban: 'Invalid IBAN',
+    number: '{item} must be a number',
+    positive: '{item} must be a positive amount',
+    balance: 'Balance',
   },
   errors: {
     general: 'There is a problem, contact support service',

@@ -866,6 +866,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@microsoft/tsdoc@npm:^0.15.0":
+  version: 0.15.1
+  resolution: "@microsoft/tsdoc@npm:0.15.1"
+  checksum: 526f125c48b4e5511571ee552ff38691405131c0b72df85f091b1aa47571315e7ba5258cd9f48c41b8ef80f2c1f489e9b09c8b1fcc1599b7f8a35f917e03ec65
+  languageName: node
+  linkType: hard
+
 "@nestjs/cli@npm:^10.0.0":
   version: 10.4.9
   resolution: "@nestjs/cli@npm:10.4.9"
@@ -978,6 +985,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@nestjs/mapped-types@npm:2.0.6":
+  version: 2.0.6
+  resolution: "@nestjs/mapped-types@npm:2.0.6"
+  peerDependencies:
+    "@nestjs/common": ^8.0.0 || ^9.0.0 || ^10.0.0
+    class-transformer: ^0.4.0 || ^0.5.0
+    class-validator: ^0.13.0 || ^0.14.0
+    reflect-metadata: ^0.1.12 || ^0.2.0
+  peerDependenciesMeta:
+    class-transformer:
+      optional: true
+    class-validator:
+      optional: true
+  checksum: dea0e728ba881ba3e454d3d2edb049b39da8dfd681869ed577d4feda249ba1b8fd82337dad4f54a72095d3341bad0a404e81d93570d03210def1a3631681ea32
+  languageName: node
+  linkType: hard
+
 "@nestjs/passport@npm:^10.0.3":
   version: 10.0.3
   resolution: "@nestjs/passport@npm:10.0.3"
@@ -1016,6 +1040,34 @@ __metadata:
   peerDependencies:
     typescript: ">=4.8.2"
   checksum: 975c3b7af27c9f6e5db3e9605e55f88580ff3525818957bd64b72cef4fefe2e6c2d850d96f68fbef9303feb98c8c70a4439ba974a8ddf22fce78d5601d8309f1
+  languageName: node
+  linkType: hard
+
+"@nestjs/swagger@npm:^8.1.0":
+  version: 8.1.0
+  resolution: "@nestjs/swagger@npm:8.1.0"
+  dependencies:
+    "@microsoft/tsdoc": ^0.15.0
+    "@nestjs/mapped-types": 2.0.6
+    js-yaml: 4.1.0
+    lodash: 4.17.21
+    path-to-regexp: 3.3.0
+    swagger-ui-dist: 5.18.2
+  peerDependencies:
+    "@fastify/static": ^6.0.0 || ^7.0.0
+    "@nestjs/common": ^9.0.0 || ^10.0.0
+    "@nestjs/core": ^9.0.0 || ^10.0.0
+    class-transformer: "*"
+    class-validator: "*"
+    reflect-metadata: ^0.1.12 || ^0.2.0
+  peerDependenciesMeta:
+    "@fastify/static":
+      optional: true
+    class-transformer:
+      optional: true
+    class-validator:
+      optional: true
+  checksum: 7ef337b77b8a0d576cd2b3ddd3288f07aadf457610237350325d4834d039ebfbe9734be6af09a5ed7da60513c9b512dc2dce3137f7536428a41a70df8c45640f
   languageName: node
   linkType: hard
 
@@ -1176,6 +1228,13 @@ __metadata:
   dependencies:
     "@prisma/debug": 6.0.1
   checksum: 6aae982e6f4f8b89dcaf2da77b9aeede6853b28364d62c8bfd0912c324e0ec664810dc32cd69971c1f8df24d95f0d3f8edd455e240d810d3f0db4bd592fc1d4a
+  languageName: node
+  linkType: hard
+
+"@scarf/scarf@npm:=1.4.0":
+  version: 1.4.0
+  resolution: "@scarf/scarf@npm:1.4.0"
+  checksum: def62aa403f7e63165ccb219efd2c420fc0b7357b0ba43397f635e4aa813ace1cdf3855a93fc559b4619bcc0469ae4767b8cb72af30ea5c0522bf4a2ecb18198
   languageName: node
   linkType: hard
 
@@ -2206,6 +2265,7 @@ __metadata:
     "@nestjs/passport": ^10.0.3
     "@nestjs/platform-express": ^10.0.0
     "@nestjs/schematics": ^10.0.0
+    "@nestjs/swagger": ^8.1.0
     "@nestjs/testing": ^10.0.0
     "@prisma/client": ^6.0.1
     "@types/express": ^5.0.0
@@ -4787,6 +4847,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"js-yaml@npm:4.1.0, js-yaml@npm:^4.1.0":
+  version: 4.1.0
+  resolution: "js-yaml@npm:4.1.0"
+  dependencies:
+    argparse: ^2.0.1
+  bin:
+    js-yaml: bin/js-yaml.js
+  checksum: c7830dfd456c3ef2c6e355cc5a92e6700ceafa1d14bba54497b34a99f0376cecbb3e9ac14d3e5849b426d5a5140709a66237a8c991c675431271c4ce5504151a
+  languageName: node
+  linkType: hard
+
 "js-yaml@npm:^3.13.1":
   version: 3.14.1
   resolution: "js-yaml@npm:3.14.1"
@@ -4796,17 +4867,6 @@ __metadata:
   bin:
     js-yaml: bin/js-yaml.js
   checksum: bef146085f472d44dee30ec34e5cf36bf89164f5d585435a3d3da89e52622dff0b188a580e4ad091c3341889e14cb88cac6e4deb16dc5b1e9623bb0601fc255c
-  languageName: node
-  linkType: hard
-
-"js-yaml@npm:^4.1.0":
-  version: 4.1.0
-  resolution: "js-yaml@npm:4.1.0"
-  dependencies:
-    argparse: ^2.0.1
-  bin:
-    js-yaml: bin/js-yaml.js
-  checksum: c7830dfd456c3ef2c6e355cc5a92e6700ceafa1d14bba54497b34a99f0376cecbb3e9ac14d3e5849b426d5a5140709a66237a8c991c675431271c4ce5504151a
   languageName: node
   linkType: hard
 
@@ -6698,6 +6758,15 @@ __metadata:
   version: 1.0.0
   resolution: "supports-preserve-symlinks-flag@npm:1.0.0"
   checksum: 53b1e247e68e05db7b3808b99b892bd36fb096e6fba213a06da7fab22045e97597db425c724f2bbd6c99a3c295e1e73f3e4de78592289f38431049e1277ca0ae
+  languageName: node
+  linkType: hard
+
+"swagger-ui-dist@npm:5.18.2":
+  version: 5.18.2
+  resolution: "swagger-ui-dist@npm:5.18.2"
+  dependencies:
+    "@scarf/scarf": =1.4.0
+  checksum: 4e8f3e4669276f421f91ce6214f9df09a5b0f9aa1b636e9044076af4f3a02b093d1eb43ed1b3962aba08be803692e71dfc1ce0c28c2057b9eb0c35b166d7ef42
   languageName: node
   linkType: hard
 
