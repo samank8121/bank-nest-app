@@ -1,5 +1,6 @@
 ## Description
 This project is a sample application built with Nest.js. It demonstrates how to add account, withdraw, deposit and transfer money with jwt authentication with prisma and postgresql
+this project has swagger on it
 
 ## Project setup
 
