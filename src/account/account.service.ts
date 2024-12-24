@@ -2,7 +2,7 @@ import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { TransactionType } from '@prisma/client';
 import { PrismaService } from 'src/common/prisma/prisma.service';
 import { MessagesService } from 'src/common/messages/messages.service';
-import { CreateAccountDto } from './validation/account';
+import { CreateAccountDto, GetAccountDto } from './dto';
 
 @Injectable()
 export class AccountService {
@@ -11,8 +11,8 @@ export class AccountService {
     private readonly messagesService: MessagesService
   ) {}
 
-  async getAccount(accountId: string) {
-    return await this.prisma.account.findUnique({
+  async getAccount(accountId: string): Promise<GetAccountDto> {
+    const response = await this.prisma.account.findUnique({
       where: { id: accountId },
       include: {
         transactions: {
@@ -22,6 +22,7 @@ export class AccountService {
         },
       },
     });
+    return response;
   }
 
   async createAccount(userId: string, dto: CreateAccountDto) {
