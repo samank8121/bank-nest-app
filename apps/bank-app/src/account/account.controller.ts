@@ -2,7 +2,7 @@ import { Body, Controller, Get, Param, Post, UseGuards } from '@nestjs/common';
 import { AccountService } from './account.service';
 import { ZodValidationPipe } from 'apps/bank-app/src/pipes/zod-validation.pipe';
 import { createAccountSchema, CreateAccountDto } from './validation/account';
-import { messagesService } from 'apps/bank-app/src/common-o/messages/messages.service';
+import { messagesService } from '@app/common/messages/messages.service';
 import { JwtGuard } from 'apps/bank-app/src/auth/guard/jwt.guard';
 import { User } from 'apps/bank-app/src/auth/decorator';
 

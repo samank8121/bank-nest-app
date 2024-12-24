@@ -1,7 +1,7 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { TransactionType } from '@prisma/client';
-import { PrismaService } from 'apps/bank-app/src/common-o/prisma/prisma.service';
-import { MessagesService } from 'apps/bank-app/src/common-o/messages/messages.service';
+import { PrismaService } from '@app/common/prisma/prisma.service';
+import { MessagesService } from '@app/common/messages/messages.service';
 import { CreateAccountDto } from './validation/account';
 
 @Injectable()
