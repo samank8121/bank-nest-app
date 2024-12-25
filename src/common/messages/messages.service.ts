@@ -13,6 +13,7 @@ export const messages = {
   },
   errors: {
     general: 'There is a problem, contact support service',
+    notFound: 'Not found',
     required: 'This field is mandatory',
     credential: 'Credentials incorrect',
   },

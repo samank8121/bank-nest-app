@@ -22,6 +22,12 @@ export class AccountService {
         },
       },
     });
+    if (!response) {
+      throw new HttpException(
+        this.messagesService.getMessage('errors', 'notFound'),
+        HttpStatus.NOT_FOUND
+      );
+    }
     return response;
   }
 
@@ -46,10 +52,16 @@ export class AccountService {
         },
       });
       return account;
-    } catch {
+    } catch (error) {
+      if (error.code === 'P2002' && error.meta?.target?.includes('iban')) {
+        throw new HttpException(
+          this.messagesService.getMessage('account', 'invalidIban'),
+          HttpStatus.BAD_REQUEST
+        );
+      }
       throw new HttpException(
         this.messagesService.getMessage('errors', 'general'),
-        HttpStatus.INTERNAL_SERVER_ERROR
+        HttpStatus.BAD_REQUEST
       );
     }
   }
