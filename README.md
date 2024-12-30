@@ -1,13 +1,15 @@
-- [Description](#description)
+## Description <!-- omit in toc -->
+This project is a sample application built with Nest.js. It demonstrates functionalities such as adding accounts, withdrawing, depositing, and transferring money, all secured with JWT authentication. The application uses Prisma as the ORM and PostgreSQL as the database. Additionally, Swagger is integrated for API documentation.
+
+For testing, the project includes end-to-end (e2e) testing and utilizes k6 for load, stress, spike, and soak testing.
+
+## Table of content
+
+- [Table of content](#table-of-content)
 - [Project setup](#project-setup)
 - [Environment Variables](#environment-variables)
 - [Compile and run the project](#compile-and-run-the-project)
 - [Run tests](#run-tests)
-
-## Description
-This project is a sample application built with Nest.js. It demonstrates functionalities such as adding accounts, withdrawing, depositing, and transferring money, all secured with JWT authentication. The application uses Prisma as the ORM and PostgreSQL as the database. Additionally, Swagger is integrated for API documentation.
-
-For testing, the project includes end-to-end (e2e) testing and utilizes k6 for load, stress, spike, and soak testing.
 
 ## Project setup
 ```bash
