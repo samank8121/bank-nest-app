@@ -9,9 +9,6 @@ For testing, the project includes end-to-end (e2e) testing and utilizes k6 for l
 - [Compile and run the project](#compile-and-run-the-project)
 - [Run tests](#run-tests)
 
-### TypeScript
-!TypeScript
-
 ## Project setup
 ```bash
 $ yarn install
