@@ -1,15 +1,26 @@
 ## Description
-This project is a sample application built with Nest.js. It demonstrates how to add accounts, withdraw, deposit, and transfer money using JWT authentication with Prisma and PostgreSQL. This project also includes Swagger for API documentation.
+This project is a sample application built with Nest.js. It demonstrates functionalities such as adding accounts, withdrawing, depositing, and transferring money, all secured with JWT authentication. The application uses Prisma as the ORM and PostgreSQL as the database. Additionally, Swagger is integrated for API documentation.
+
+For testing, the project includes end-to-end (e2e) testing and utilizes k6 for load, stress, spike, and soak testing.
+
+## Table of Contents
+- Project Setup
+- Compile and Run the Project
+- Run Tests
 
 ## Project setup
-
 ```bash
 $ yarn install
 ```
 
-## Compile and run the project
+## Environment Variables
+Create `.env` and `.env.test` files with the following keys:
 
-```bash
+- `DATABASE_URL`: URL for your PostgreSQL database.
+- `TOKEN_SECRET_KEY`: Secret key for JWT authentication.
+
+## Compile and run the project
+```bash 
 # development
 $ yarn run start
 
@@ -19,8 +30,7 @@ $ yarn run start:dev
 ```
 
 ## Run tests
-
 ```bash
-# unit tests
-$ yarn run test
+# e2e test
+$ yarn run test:e2e
 ```
