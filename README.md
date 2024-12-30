@@ -3,8 +3,6 @@ This project is a sample application built with Nest.js. It demonstrates functio
 
 For testing, the project includes end-to-end (e2e) testing and utilizes k6 for load, stress, spike, and soak testing.
 
-<img src="https://raw.githubusercontent.com/github/explore/main/topics/typescript/typescript.png" alt="TypeScript" width="40" height="40">
-<img src="https://raw.githubusercontent.com/github/explore/main/topics/nestjs/nestjs.png" alt="NestJS" width="40" height="40">
 ## Table of content <!-- omit in toc -->
 - [Project setup](#project-setup)
 - [Environment Variables](#environment-variables)
