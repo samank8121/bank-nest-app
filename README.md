@@ -3,9 +3,7 @@ This project is a sample application built with Nest.js. It demonstrates functio
 
 For testing, the project includes end-to-end (e2e) testing and utilizes k6 for load, stress, spike, and soak testing.
 
-## Table of content
-
-- [Table of content](#table-of-content)
+## Table of content <!-- omit in toc -->
 - [Project setup](#project-setup)
 - [Environment Variables](#environment-variables)
 - [Compile and run the project](#compile-and-run-the-project)
