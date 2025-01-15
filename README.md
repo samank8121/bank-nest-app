@@ -8,6 +8,7 @@ For testing, the project includes end-to-end (e2e) testing and utilizes k6 for l
 - [Environment Variables](#environment-variables)
 - [Compile and run the project](#compile-and-run-the-project)
 - [Run tests](#run-tests)
+- [Swagger](#swagger)
 
 ## Project setup
 ```bash
@@ -35,3 +36,5 @@ $ yarn run start:dev
 # e2e test
 $ yarn run test:e2e
 ```
+## Swagger
+http://localhost:3000/swagger#/

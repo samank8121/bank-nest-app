@@ -8,9 +8,9 @@ export class CreateAccountDto {
     description: 'IBAN',
     example: 'DE89370400440532013000',
   })
-  @IsString({ message: messagesService.getMessage('account', 'invalidIban') })
+  @IsString({ message: messagesService.getMessage('errors', 'account', 'invalidIban') })
   @Validate((value: string) => isValidIBAN(value), {
-    message: messagesService.getMessage('account', 'invalidIban'),
+    message: messagesService.getMessage('errors', 'account', 'invalidIban'),
   })
   iban: string;
 
@@ -36,13 +36,13 @@ export class CreateAccountDto {
 }
 export class ResponseCreateAccountDto {
   @ApiProperty({
-    description: messagesService.getMessage('account', 'invalidIban'),
+    description: messagesService.getMessage('errors', 'account', 'invalidIban'),
     example: 'Account id',
   })
   id: string;
 
   @ApiProperty({
-    description: messagesService.getMessage('account', 'invalidIban'),
+    description: messagesService.getMessage('errors', 'account', 'invalidIban'),
     example: 'DE89370400440532013000',
   })
   iban: string;
@@ -55,7 +55,7 @@ export class ResponseCreateAccountDto {
   balance: number;
 
   @ApiProperty({
-    description: messagesService.getMessage('account', 'invalidIban'),
+    description: messagesService.getMessage('errors', 'account', 'invalidIban'),
     example: 'User Id',
   })
   userId: number;
