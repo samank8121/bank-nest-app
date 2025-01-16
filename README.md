@@ -1,7 +1,7 @@
 ## Description <!-- omit in toc -->
-This project is a sample application built with Nest.js. It demonstrates functionalities such as adding accounts, withdrawing, depositing, and transferring money, all secured with JWT authentication. The application uses Prisma as the ORM and PostgreSQL as the database. Additionally, Swagger is integrated for API documentation.
+This is a sample bank application using Nest.js, showcasing key functionalities such as account creation, withdrawals, deposits, and money transfers, all secured with JWT authentication. The application leverages Prisma as the ORM and PostgreSQL as the database. Integrated Swagger for comprehensive API documentation.
 
-For testing, the project includes end-to-end (e2e) testing and utilizes k6 for load, stress, spike, and soak testing.
+For testing, implemented end-to-end (e2e) testing with Jest and utilized k6 for load, stress, spike, and soak testing.
 
 ## Table of content <!-- omit in toc -->
 - [Project setup](#project-setup)
