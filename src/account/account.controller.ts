@@ -14,16 +14,11 @@ import {
   WithdrawAccountDto,
 } from './dto';
 import {
-  ApiBadRequestResponse,
   ApiBearerAuth,
-  ApiCreatedResponse,
-  ApiOkResponse,
-  ApiOperation,
   ApiTags,
 } from '@nestjs/swagger';
-import { messagesService } from 'src/common/messages/messages.service';
 
-const getMsg = messagesService.getMessage;
+import { AccountApiSwagger } from './decorator/account-api.decorator';
 
 @UseGuards(JwtGuard)
 @Controller('account')
@@ -33,56 +28,50 @@ export class AccountController {
   constructor(private accountService: AccountService) {}
 
   @Get(':id')
-  @ApiOperation({ summary: getMsg('swagger', 'account','get', 'summary') })
-  @ApiOkResponse({ description: getMsg('swagger', 'account','get', 'success'), type: GetAccountDto })
-  @ApiBadRequestResponse({ description: getMsg('swagger', 'account','get', 'failed') })
+  @AccountApiSwagger({
+    operation: 'get',
+    responseType: GetAccountDto
+  })
   getAccount(@Param('id') accountId: string) {
     return this.accountService.getAccount(accountId);
   }
 
   @Post('create-account')
-  @ApiOperation({ summary: getMsg('swagger', 'account','create', 'summary') })
-  @ApiCreatedResponse({
-    description: getMsg('swagger', 'account','create', 'success'),
-    type: ResponseCreateAccountDto,
+  @AccountApiSwagger({
+    operation: 'create',
+    responseType: ResponseCreateAccountDto,
+    httpStatus: HttpStatus.CREATED
   })
-  @ApiBadRequestResponse({ description: getMsg('swagger', 'account','create', 'failed') })
   createAccount(@User('id') userId: string, @Body() dto: CreateAccountDto) {
     return this.accountService.createAccount(userId, dto);
   }
 
   @Post('deposit')
   @HttpCode(HttpStatus.OK)
-  @ApiOperation({ summary: getMsg('swagger', 'account','deposit', 'summary') })
-  @ApiOkResponse({
-    description: getMsg('swagger', 'account','deposit', 'success'),
-    type: ResponseDepositDto,
+  @AccountApiSwagger({
+    operation: 'deposit',
+    responseType: ResponseDepositDto,
   })
-  @ApiBadRequestResponse({ description: getMsg('swagger', 'account','deposit', 'failed') })
   deposit(@Body() dto: DepositAccountDto) {
     return this.accountService.deposit(dto);
   }
 
   @Post('withdraw')
   @HttpCode(HttpStatus.OK)
-  @ApiOperation({ summary: getMsg('swagger', 'account','withdraw', 'summary') })
-  @ApiOkResponse({
-    description: getMsg('swagger', 'account','withdraw', 'success'),
-    type: ResponseWithdrawDto,
+  @AccountApiSwagger({
+    operation: 'withdraw',
+    responseType: ResponseWithdrawDto
   })
-  @ApiBadRequestResponse({ description: getMsg('swagger', 'account','withdraw', 'failed') })
   withdraw(@Body() dto: WithdrawAccountDto) {
     return this.accountService.withdraw(dto);
   }
 
   @Post('transfer')
   @HttpCode(HttpStatus.OK)
-  @ApiOperation({ summary: getMsg('swagger', 'account','transfer', 'summary') })
-  @ApiOkResponse({
-    description: getMsg('swagger', 'account','transfer', 'success'),
-    type: ResponseTransferDto,
+  @AccountApiSwagger({
+    operation: 'transfer',
+    responseType: ResponseTransferDto
   })
-  @ApiBadRequestResponse({ description: getMsg('swagger', 'account','transfer', 'failed') })
   transfer(@Body() dto: TransferAccountDto) {
     return this.accountService.transfer(dto);
   }
