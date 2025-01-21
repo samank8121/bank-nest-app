@@ -1,5 +1,5 @@
 ## Description <!-- omit in toc -->
-This is a sample bank application using Nest.js, showcasing key functionalities such as account creation, withdrawals, deposits, and money transfers, all secured with JWT authentication. The application leverages Prisma as the ORM and PostgreSQL as the database. Integrated Swagger for comprehensive API documentation.
+This is a sample bank application using Nest.js, showcasing key functionalities such as account creation, withdrawals, deposits, and money transfers, all secured with JWT authentication. The application leverages Prisma as the ORM and PostgreSQL as the database. Also uses Redis for caching. Integrated Swagger for comprehensive API documentation.
 
 For testing, implemented end-to-end (e2e) testing with Jest and utilized k6 for load, stress, spike, and soak testing.
 
@@ -19,7 +19,13 @@ $ yarn install
 Create `.env` and `.env.test` files with the **following** keys:
 
 - `DATABASE_URL`: URL for your PostgreSQL database.
+- `REDIS_URL`: URL for your Redis database.
 - `TOKEN_SECRET_KEY`: Secret key for JWT authentication.
+
+## Docker setup
+```bash
+$ docker-compose up --build
+```
 
 ## Compile and run the project
 ```bash 

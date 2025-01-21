@@ -1,4 +1,4 @@
-import { Body, Controller, Get, HttpCode, HttpStatus, Param, Post, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, HttpCode, HttpStatus, Param, Post, UseGuards, UseInterceptors } from '@nestjs/common';
 import { AccountService } from './account.service';
 import { JwtGuard } from 'src/auth/guard/jwt.guard';
 import { User } from 'src/auth/decorator';
@@ -19,11 +19,13 @@ import {
 } from '@nestjs/swagger';
 
 import { AccountApiSwagger } from './decorator/account-api.decorator';
+import { CacheInterceptor } from '@nestjs/cache-manager';
 
 @UseGuards(JwtGuard)
 @Controller('account')
 @ApiBearerAuth()
 @ApiTags('account')
+@UseInterceptors(CacheInterceptor)
 export class AccountController {
   constructor(private accountService: AccountService) {}
 
