@@ -6,13 +6,14 @@ For testing, implemented end-to-end (e2e) testing with Jest and utilized k6 for 
 ## Table of content <!-- omit in toc -->
 - [Project setup](#project-setup)
 - [Environment Variables](#environment-variables)
+- [Docker setup](#docker-setup)
 - [Compile and run the project](#compile-and-run-the-project)
 - [Run tests](#run-tests)
 - [Swagger](#swagger)
 
 ## Project setup
 ```bash
-$ yarn install
+$ pnpm install
 ```
 
 ## Environment Variables
@@ -30,17 +31,17 @@ $ docker-compose up --build
 ## Compile and run the project
 ```bash 
 # development
-$ yarn run start
+$ pnpm start
 
 # watch mode
-$ yarn run start:dev
+$ pnpm start:dev
 
 ```
 
 ## Run tests
 ```bash
 # e2e test
-$ yarn run test:e2e
+$ pnpm test:e2e
 ```
 ## Swagger
 http://localhost:3000/swagger#/
