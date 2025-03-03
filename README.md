@@ -45,3 +45,6 @@ $ pnpm test:e2e
 ```
 ## Swagger
 http://localhost:3000/swagger#/
+
+## Author
+[Saman Kefayatpour](https://www.linkedin.com/in/samankefayatpour/)
