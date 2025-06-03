@@ -1,0 +1,12 @@
+# Versioning and metadata
+.git
+.gitignore
+.dockerignore
+
+# Build dependencies
+dist.do
+node_modules
+
+# Misc
+.eslintrc.js
+README.md

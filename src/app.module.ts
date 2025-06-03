@@ -15,8 +15,7 @@ import { CacheableMemory } from 'cacheable';
     CacheModule.registerAsync({
       isGlobal: true,
       inject: [ConfigService],
-      useFactory: async (configService: ConfigService) => {
-        
+      useFactory: async (configService: ConfigService) => {        
         return {
           stores: [
             new Keyv({

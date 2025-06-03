@@ -1,16 +1,18 @@
-version: '3.8'
-
 services:
-  app:
+  bank-app:
     build: .
     ports:
-      - "3000:3000"
+      - "3005:3005"
     depends_on:
-      - postgres
-      - postgres_test
-      - redis
+      postgres:
+        condition: service_healthy
+      postgres_test:
+        condition: service_started
+      redis:
+        condition: service_started
+    command: sh -c "pnpm prisma migrate deploy && pnpm run start:dev"
     env_file:
-      - .env
+      - ./.env
 
   postgres:
     image: postgres:16
@@ -20,6 +22,10 @@ services:
       POSTGRES_DB: bankdb_nest
     ports:
       - "5432:5432"
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres"]
+      interval: 5s
+      retries: 5
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
